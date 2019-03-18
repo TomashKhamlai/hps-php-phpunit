@@ -13,6 +13,7 @@ class BeansTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testMessageFillBeansIsDisplayedAfter38CoffeesAreTaken() {
+    // Tags: priority:high
     // When I take "38" coffees
     $this->actionwords->iTakeCoffeeNumberCoffees(38);
     // Then message "Fill beans" should be displayed
@@ -20,7 +21,8 @@ class BeansTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testItIsPossibleToTake40CoffeesBeforeThereIsReallyNoMoreBeans() {
-    // Given I take "40" coffees
+    // Tags: priority:low
+    // When I take "40" coffees
     $this->actionwords->iTakeCoffeeNumberCoffees(40);
     // Then coffee should be served
     $this->actionwords->coffeeShouldBeServed();
@@ -33,9 +35,10 @@ class BeansTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testAfterAddingBeansTheMessageFillBeansDisappears() {
-    // Given I take "40" coffees
+    // Tags: priority:high
+    // When I take "40" coffees
     $this->actionwords->iTakeCoffeeNumberCoffees(40);
-    // When I fill the beans tank
+    // And I fill the beans tank
     $this->actionwords->iFillTheBeansTank();
     // Then message "Ready" should be displayed
     $this->actionwords->messageMessageShouldBeDisplayed("Ready");

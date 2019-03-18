@@ -13,6 +13,7 @@ class WaterTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testMessageFillWaterTankIsDisplayedAfter50CoffeesAreTaken() {
+    // Tags: priority:high
     // When I take "50" coffees
     $this->actionwords->iTakeCoffeeNumberCoffees(50);
     // Then message "Fill tank" should be displayed
@@ -20,7 +21,8 @@ class WaterTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testItIsPossibleToTake10CoffeesAfterTheMessageFillWaterTankIsDisplayed() {
-    // Given I take "60" coffees
+    // Tags: priority:low
+    // When I take "60" coffees
     $this->actionwords->iTakeCoffeeNumberCoffees(60);
     // Then coffee should be served
     $this->actionwords->coffeeShouldBeServed();
@@ -31,9 +33,10 @@ class WaterTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testWhenTheWaterTankIsFilledTheMessageDisappears() {
-    // Given I take "55" coffees
+    // Tags: priority:high
+    // When I take "55" coffees
     $this->actionwords->iTakeCoffeeNumberCoffees(55);
-    // When I fill the water tank
+    // And I fill the water tank
     $this->actionwords->iFillTheWaterTank();
     // Then message "Ready" should be displayed
     $this->actionwords->messageMessageShouldBeDisplayed("Ready");

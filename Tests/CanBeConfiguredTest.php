@@ -8,6 +8,7 @@ class CanBeConfiguredTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testDisplaySettings() {
+    // Tags: priority:medium
     // Given the coffee machine is started
     $this->actionwords->theCoffeeMachineIsStarted();
     // When I switch to settings mode
@@ -17,12 +18,12 @@ class CanBeConfiguredTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testDefaultSettings() {
+    // Tags: priority:high
     // Given the coffee machine is started
     $this->actionwords->theCoffeeMachineIsStarted();
     // When I switch to settings mode
     $this->actionwords->iSwitchToSettingsMode();
-    // Then settings should be: "| water hardness | 2      |
-    // | grinder        | medium |"
+    // Then settings should be:
     $this->actionwords->settingsShouldBe("| water hardness | 2      |\n| grinder        | medium |");
   }
 }

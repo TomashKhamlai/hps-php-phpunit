@@ -13,6 +13,7 @@ class GroundsTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testMessageEmptyGroundsIsDisplayedAfter30CoffeesAreTaken() {
+    // Tags: priority:high
     // When I take "30" coffees
     $this->actionwords->iTakeCoffeeNumberCoffees(30);
     // Then message "Empty grounds" should be displayed
@@ -20,9 +21,10 @@ class GroundsTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testWhenTheGroundsAreEmptiedMessageIsRemoved() {
-    // Given I take "30" coffees
+    // Tags: priority:medium
+    // When I take "30" coffees
     $this->actionwords->iTakeCoffeeNumberCoffees(30);
-    // When I empty the coffee grounds
+    // And I empty the coffee grounds
     $this->actionwords->iEmptyTheCoffeeGrounds();
     // Then message "Ready" should be displayed
     $this->actionwords->messageMessageShouldBeDisplayed("Ready");

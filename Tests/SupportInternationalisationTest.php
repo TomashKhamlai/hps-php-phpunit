@@ -7,17 +7,8 @@ class SupportInternationalisationTest extends PHPUnit_Framework_TestCase {
     $this->actionwords = new Actionwords();
   }
 
-  public function testNoMessagesAreDisplayedWhenMachineIsShutDown() {
-    // Given the coffee machine is started
-    $this->actionwords->theCoffeeMachineIsStarted();
-    // When I shutdown the coffee machine
-    $this->actionwords->iShutdownTheCoffeeMachine();
-    // Then message "" should be displayed
-    $this->actionwords->messageMessageShouldBeDisplayed("");
-  }
-
   public function messagesAreBasedOnLanguage($language, $ready_message) {
-    // Well, sometimes, you just get a coffee.
+    // Tags: priority:medium
     // When I start the coffee machine using language "<language>"
     $this->actionwords->iStartTheCoffeeMachineUsingLanguageLang($language);
     // Then message "<ready_message>" should be displayed
@@ -30,6 +21,17 @@ class SupportInternationalisationTest extends PHPUnit_Framework_TestCase {
 
   public function testMessagesAreBasedOnLanguageFrench() {
     $this->messagesAreBasedOnLanguage('fr', 'Pret');
+  }
+
+
+  public function testNoMessagesAreDisplayedWhenMachineIsShutDown() {
+    // Tags: priority:medium
+    // Given the coffee machine is started
+    $this->actionwords->theCoffeeMachineIsStarted();
+    // When I shutdown the coffee machine
+    $this->actionwords->iShutdownTheCoffeeMachine();
+    // Then message "" should be displayed
+    $this->actionwords->messageMessageShouldBeDisplayed("");
   }
 }
 ?>

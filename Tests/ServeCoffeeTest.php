@@ -9,6 +9,7 @@ class ServeCoffeeTest extends PHPUnit_Framework_TestCase {
 
   public function testSimpleUse() {
     // Well, sometimes, you just get a coffee.
+    // Tags: priority:high
     // Given the coffee machine is started
     $this->actionwords->theCoffeeMachineIsStarted();
     // When I take a coffee
