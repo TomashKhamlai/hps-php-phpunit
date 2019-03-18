@@ -1,6 +1,6 @@
 # hps-php-phpunit
 
-[![Build Status](https://travis-ci.org/hiptest/hps-php-phpunit.svg?branch=master)](https://travis-ci.org/hiptest/hps-php-phpunit)
+[![Build Status](https://travis-ci.org/hiptest/hps-php-phpunit.svg?branch=master)](https://travis-ci.org/TomashKhamlai/hps-php-phpunit)
 
 Hiptest publisher samples with PHP/PHPUnit
 
